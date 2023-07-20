@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="imageStore"
+            type="com.hola360.crushlovecalculator.data.model.ImageStore" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/myLayoutRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/dp_4"
+        android:paddingTop="@dimen/dp_10">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/myImageViewIcon"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:bindImageStore="@{imageStore.thumb}"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="1:1.5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundedImage"
+            app:strokeColor="@color/md_grey_500_25"
+            app:strokeWidth="@dimen/dp_1" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_gradient_bottom_dark"
+            app:layout_constraintBottom_toBottomOf="@+id/myImageViewIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/TextCountAction"
+            android:countAction="@{imageStore.like}"
+            android:textViewDrawable="@{imageStore.favorite}"
+            app:layout_constraintBottom_toBottomOf="@+id/myImageViewIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="@dimen/dp_4"/>
+
+        <TextView
+            style="@style/TextCountAction"
+            android:countAction="@{imageStore.view}"
+            app:drawableStartCompat="@drawable/ic_item_eye"
+            app:layout_constraintBottom_toBottomOf="@+id/myImageViewIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="@dimen/dp_4"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="@string/string_search_diary_menu_title"
+        android:id="@+id/searchBar"
+        app:showAsAction="always"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        />
+</menu>

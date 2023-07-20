@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_unit_item_height"
+        android:paddingVertical="5dp"
+        android:gravity="center_vertical"
+        android:fontFamily="@font/quicksand_medium"
+        android:textSize="18dp"
+        android:paddingStart="@dimen/v_margin"
+        android:background="?selectableItemBackground"
+        android:id="@+id/txtUnit" />
+</layout>

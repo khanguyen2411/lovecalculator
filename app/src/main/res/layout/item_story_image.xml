@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="imageThumb"
+            type="String" />
+
+        <variable
+            name="photoModel"
+            type="com.hola360.crushlovecalculator.data.model.PhotoModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/sivImage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:bindPickingPhoto="@{photoModel}"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_default_event"
+            app:layout_constraintDimensionRatio="1:1.3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundedImageStory" />
+
+        <FrameLayout
+            android:id="@+id/llOverlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/sivImage"
+            app:layout_constraintEnd_toEndOf="@id/sivImage"
+            app:layout_constraintStart_toStartOf="@id/sivImage"
+            app:layout_constraintTop_toTopOf="@id/sivImage"
+            app:shapeAppearanceOverlay="@style/roundedImageStory">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_story_image_overlay" />
+
+            <TextView
+                android:id="@+id/tvCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:elevation="@dimen/dp_5"
+                android:textAppearance="@style/TextAppearance.MyTheme.Headline10"
+                android:textColor="@color/white" />
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

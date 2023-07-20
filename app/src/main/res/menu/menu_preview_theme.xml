@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_apply"
+        android:icon="@drawable/ic_apply_theme"
+        android:title="@string/love_time_apply_theme"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_favorite"
+        android:icon="@drawable/ic_detail_favorite"
+        android:title="@string/app_name"
+        app:showAsAction="ifRoom" />
+</menu>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="photoModel"
+            type="com.hola360.crushlovecalculator.data.model.PhotoModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/myLayoutRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_6">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/myImageViewIcon"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:bindThumbnailFile="@{photoModel}"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundedImage"
+            app:strokeColor="@color/md_grey_500_25"
+            app:strokeWidth="@dimen/dp_1"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

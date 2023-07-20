@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.hola360.crushlovecalculator.dialog.photopicker.PickPhotoViewModel" />
+
+        <variable
+            name="maximum"
+            type="Integer" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="?colorPrimary"
+            android:paddingHorizontal="@dimen/dp_8">
+
+            <ImageButton
+                android:id="@+id/myButtonClose"
+                android:layout_width="@dimen/dp_36"
+                android:layout_height="@dimen/dp_36"
+                android:layout_centerVertical="true"
+                android:background="?selectableItemBackground"
+                android:contentDescription="@string/app_name"
+                android:onClick="@{()->viewModel.onClose()}"
+                android:src="@{viewModel.isAlbumModel?@drawable/ic_toolbar_back:@drawable/ic_my_photo_close}"
+                app:tint="@color/md_white_1000" />
+
+            <TextView
+                android:id="@+id/tvAlbumName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="?attr/selectableItemBackground"
+                android:drawableEnd="@{viewModel.isAlbumModel?@drawable/ic_baseline_keyboard_arrow_up_32:@drawable/ic_baseline_keyboard_arrow_down_32}"
+                android:drawablePadding="@dimen/dp_8"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:onClick="@{()->viewModel.loadAlbum()}"
+                android:paddingHorizontal="@dimen/dp_8"
+                android:paddingVertical="@dimen/dp_4"
+                android:text="@string/title_photos"
+                android:textAppearance="?textAppearanceHeadline6"
+                android:textColor="@color/md_white_1000"
+                android:visibility="@{viewModel.isLoading()?View.INVISIBLE:View.VISIBLE}"
+                app:drawableTint="@color/md_white_1000"
+                tools:ignore="UseCompatTextViewDrawableXml" />
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:splitMotionEvents="false"
+                android:id="@+id/recycleView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="@{viewModel.isEmpty()?View.VISIBLE:View.GONE}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/empty_list"
+                    android:textAppearance="?textAppearanceBody1" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:visibility="@{viewModel.isLoading()?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/bottomLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/bg_story_pick_photo_bottom_layout"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/tvMaximum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="@dimen/dp_10"
+                    android:layout_weight="8"
+                    android:bindMaximum="@{maximum}"
+                    android:fontFamily="@font/quicksand_medium"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/tvDone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/dp_10"
+                    android:layout_weight="2"
+                    android:background="@drawable/bg_story_button_done"
+                    android:enabled="false"
+                    android:fontFamily="@font/quicksand_medium"
+                    android:gravity="center"
+                    android:padding="@dimen/dp_4"
+                    android:text="@string/action_done"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                    android:textColor="@color/white" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/viewBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

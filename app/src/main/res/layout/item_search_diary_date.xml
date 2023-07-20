@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="diaryModel"
+            type="com.hola360.crushlovecalculator.data.model.diary.DiaryModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/dp_5">
+
+        <View
+            android:id="@+id/vBg"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/bg_story_detail_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvPickDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_2"
+            android:elevation="@dimen/dp_1"
+            android:fontFamily="@font/quicksand_semibold"
+            android:text="@{diaryModel.date}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textColor="#E0294C"
+            app:layout_constraintBottom_toTopOf="@id/vBg"
+            app:layout_constraintStart_toStartOf="@id/vBg"
+            app:layout_constraintTop_toTopOf="@id/vBg" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

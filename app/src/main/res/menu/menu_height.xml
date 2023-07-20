@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/unit_cm"
+        android:title="@string/profile_height_unit_cm" />
+    <item
+        android:id="@+id/unit_inch"
+        android:title="@string/profile_height_unit_inch" />
+</menu>

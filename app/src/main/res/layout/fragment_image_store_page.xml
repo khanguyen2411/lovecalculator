@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.hola360.crushlovecalculator.ui.lovetime.store.base.BaseStoreViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/mySwipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/myLayoutLoadMore"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyleview"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:paddingHorizontal="@dimen/dp_8" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="@{viewModel.isEmpty()?View.VISIBLE:View.GONE}">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_img_no_internet" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp_8"
+                android:text="@{viewModel.emptyTitle()}"
+                android:textAppearance="?textAppearanceBody1"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:layout_marginHorizontal="@dimen/dp_32"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp_8"
+                android:text="@{viewModel.emptyMessage()}"
+                android:textAppearance="?textAppearanceBody1"
+                android:textAlignment="center"
+                android:layout_marginHorizontal="30dp"
+                android:textColor="@color/textNoInternet"/>
+
+            <TextView
+                android:id="@+id/set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_8"
+                android:background="@drawable/bg_profile_update"
+                android:elevation="@dimen/card_elevation"
+                android:fontFamily="@font/quicksand_medium"
+                android:onClick="@{()->viewModel.retry()}"
+                android:paddingHorizontal="@dimen/dp_32"
+                android:paddingVertical="@dimen/dp_8"
+                android:text="@string/retry"
+                android:textAppearance="?textAppearanceBody1"
+                android:textColor="@color/md_white_1000"
+                android:visibility="@{viewModel.showRetry?View.VISIBLE:View.INVISIBLE}" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/progressbar"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="@{viewModel.isLoading()?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/myLayoutLoadMore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/dp_4"
+            android:visibility="@{viewModel.isLoadingMore() ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="@dimen/dp_32"
+                android:layout_height="@dimen/dp_32"
+                android:indeterminate="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:text="@string/string_loading"
+                android:textAppearance="?textAppearanceBody1"
+                android:textColor="@color/colorAccent" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

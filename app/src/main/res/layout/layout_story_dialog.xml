@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="mViewModel"
+            type="com.hola360.crushlovecalculator.ui.event.dialog.StoryDialogViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/CustomToolBar"
+            android:theme="@style/Theme.App.AppBarOverlay"
+            app:contentInsetStartWithNavigation="@dimen/dp_4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/menu_story_disable"
+            app:navigationIcon="@drawable/ic_toolbar_back"
+            app:popupTheme="@style/Theme.App.PopupOverlay"
+            app:titleTextAppearance="?textAppearanceHeadline6"
+            app:titleTextColor="@color/md_white_1000" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_5"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_200"
+                android:layout_margin="@dimen/dp_10"
+                android:background="@null"
+                android:maxLength="1500"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="top"
+                android:hint="@string/string_story_description_hint"
+                android:importantForAutofill="no"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColorHint="#C086DF" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPickPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_10"
+                android:background="@drawable/bg_story_detail" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_loading_layout"
+            android:gravity="center"
+            android:visibility="@{mViewModel.isLoading() ? View.VISIBLE : View.GONE}">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_loading_layout_center"
+                android:orientation="vertical">
+
+                <com.github.ybq.android.spinkit.SpinKitView
+                    style="@style/SpinKitView.Large.Circle"
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="@dimen/dp_20"
+                    app:SpinKit_Color="@color/md_white_1000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="@dimen/dp_70"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:text="@string/string_loading"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="@color/white" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

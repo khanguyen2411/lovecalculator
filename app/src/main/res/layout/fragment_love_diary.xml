@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="diaryModel"
+            type="com.hola360.crushlovecalculator.ui.lovediary.LoveDiaryFragmentViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/CustomToolBar"
+            android:theme="@style/Theme.App.AppBarOverlay"
+            app:contentInsetStartWithNavigation="@dimen/dp_4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/menu_diary_love"
+            app:navigationIcon="@drawable/ic_toolbar_back"
+            app:popupTheme="@style/Theme.App.PopupOverlay"
+            app:title="@string/string_text_diary_love"
+            app:titleTextAppearance="?textAppearanceHeadline6"
+            app:titleTextColor="@color/md_white_1000" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvDiary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <RelativeLayout
+            android:id="@+id/layoutEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_200"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/view_line"
+            android:visibility="@{diaryModel.isEmpty() ? View.VISIBLE : View.GONE}"
+            >
+
+            <ImageView
+                android:id="@+id/img_Banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_banner_diary_" />
+
+            <TextView
+                android:id="@+id/title_banner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_Banner"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_20"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="@string/string_text_diary_love_start_writting"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@color/colorAccent"
+               />
+
+            <ImageView
+                android:id="@+id/line_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_banner"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/dp_2"
+                android:layout_marginRight="@dimen/dp_100"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:src="@drawable/ic_line_diary" />
+        </RelativeLayout>
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/progessbar"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{diaryModel.isLoading() ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/add_diary_love"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_30"
+            android:layout_marginBottom="@dimen/dp_40"
+            android:src="@drawable/ic_add_diary_love"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintTop_toBottomOf="@id/add_diary_love" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

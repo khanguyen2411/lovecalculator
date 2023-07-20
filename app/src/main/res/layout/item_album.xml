@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="photoModel"
+            type="com.hola360.crushlovecalculator.data.model.PhotoModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/myLayoutRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/dp_16"
+       >
+
+        <LinearLayout
+            android:id="@+id/layoutContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/dp_16"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/myImageViewIcon"
+                android:layout_width="@dimen/album_icon_width"
+                android:layout_height="@dimen/album_icon_width"
+                android:bindThumbnailFile="@{photoModel}"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/roundedImage"
+                app:strokeColor="@color/md_grey_500_25"
+                app:strokeWidth="@dimen/dp_1" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/dp_8">
+
+                <TextView
+                    android:id="@+id/myTextViewTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/quicksand_medium"
+                    android:lines="1"
+                    android:text="@{photoModel.albumName}"
+                    android:textAppearance="?textAppearanceBody1" />
+
+                <TextView
+                    android:id="@+id/myTextViewSubTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:text="@{String.valueOf(photoModel.childCount)}"
+                    android:textAppearance="?textAppearanceBody2" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="@dimen/dp_24"
+                android:layout_weight="0"
+                android:src="@drawable/ic_baseline_check_32"
+                android:visibility="@{photoModel.checked?View.VISIBLE:View.GONE}"
+                app:tint="?colorPrimary" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@drawable/line_divide_photo_album"
+            app:layout_constraintBottom_toBottomOf="@+id/layoutContent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

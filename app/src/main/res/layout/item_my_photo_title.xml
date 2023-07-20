@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/myLayoutRoot"
+        android:layout_width="match_parent"
+        android:background="?selectableItemBackground"
+        android:layout_height="@dimen/dp_48">
+
+        <TextView
+            android:id="@+id/myPhotoTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="@dimen/dp_4"
+            android:layout_toStartOf="@+id/selectBox"
+            android:ellipsize="end"
+            android:textAppearance="?textAppearanceBody1" />
+
+        <ImageView
+            android:id="@+id/selectBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:src="@drawable/ic_my_photo_radio_button_unchecked" />
+
+    </RelativeLayout>
+</layout>

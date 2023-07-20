@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.hola360.crushlovecalculator.ui.lovetheme.ThemeViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/CustomToolBar"
+            android:theme="@style/Theme.App.AppBarOverlay"
+            app:contentInsetStartWithNavigation="@dimen/dp_4"
+            app:navigationIcon="@drawable/ic_toolbar_back"
+            app:popupTheme="@style/Theme.App.PopupOverlay"
+            app:title="@string/select_theme"
+            app:titleTextAppearance="?textAppearanceHeadline6"
+            app:titleTextColor="@color/md_white_1000" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/mySwipeRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyleview"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:paddingHorizontal="@dimen/dp_8" />
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="@{viewModel.isEmpty()?View.VISIBLE:View.GONE}">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_img_no_internet" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/dp_8"
+                    android:text="@string/string_lovetime_emoij_no_internet"
+                    android:textAppearance="?textAppearanceBody1"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:layout_marginHorizontal="@dimen/dp_32"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/dp_8"
+                    android:text="@string/string_lovetime_emoij_you_offline"
+                    android:textAppearance="?textAppearanceBody1"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/set"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_8"
+                    android:background="@drawable/bg_profile_update"
+                    android:elevation="@dimen/card_elevation"
+                    android:fontFamily="@font/quicksand_medium"
+                    android:onClick="@{()->viewModel.retry()}"
+                    android:paddingHorizontal="@dimen/dp_32"
+                    android:paddingVertical="@dimen/dp_8"
+                    android:text="@string/retry"
+                    android:textAppearance="?textAppearanceBody1"
+                    android:textColor="@color/md_white_1000" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/progressbar"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:visibility="@{viewModel.isLoading()?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</layout>

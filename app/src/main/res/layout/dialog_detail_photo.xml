@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.hola360.crushlovecalculator.ui.lovetime.store.detail.DetailImageViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:colorBackground"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/CustomToolBar"
+            app:contentInsetStartWithNavigation="@dimen/dp_4"
+            app:navigationIcon="@drawable/ic_my_photo_close"
+            app:title="@string/title_preview"
+            app:titleTextAppearance="?textAppearanceHeadline6"
+            app:titleTextColor="@color/md_white_1000" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imPreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:bindFullImageStore="@{viewModel.uiData}"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop" />
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_16"
+                android:background="@drawable/bg_image_detail_bottom"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/btShare"
+                    style="@style/DetailImageActionButton"
+                    android:text="@string/action_share"
+                    app:drawableTopCompat="@drawable/ic_detail_share" />
+
+                <TextView
+                    android:id="@+id/btSetAs"
+                    style="@style/DetailImageActionButton"
+                    android:text="@string/set_as"
+                    app:drawableTopCompat="@drawable/ic_detail_set_as" />
+
+                <TextView
+                    style="@style/DetailImageActionButton"
+                    android:drawableTop="@{viewModel.uiData.favorite?@drawable/ic_favorite_fill_21:@drawable/ic_detail_favorite}"
+                    android:onClick="@{()->viewModel.clickOnFavorite()}"
+                    android:text="@string/string_favorite" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</layout>

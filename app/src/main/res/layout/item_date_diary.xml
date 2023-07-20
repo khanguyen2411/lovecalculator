@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="diaryModel"
+            type="com.hola360.crushlovecalculator.data.model.diary.DiaryModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:background="@drawable/bg_calendar"
+        android:padding="@dimen/dp_10"
+        android:id="@+id/root">
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:fontFamily="@font/quicksand_medium"
+            android:setTextTime="@{diaryModel.time}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#1D1D1D"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.caverock.androidsvg.SVGImageView
+            android:id="@+id/sivWeather"
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_marginStart="@dimen/dp_40"
+            android:src="@drawable/ic_weather"
+            app:layout_constraintBottom_toBottomOf="@id/tvTime"
+            app:layout_constraintStart_toEndOf="@id/tvTime"
+            app:layout_constraintTop_toTopOf="@id/tvTime" />
+
+        <com.caverock.androidsvg.SVGImageView
+            android:id="@+id/sivEmotion"
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_marginStart="@dimen/dp_20"
+            android:src="@drawable/ic_feeling"
+            app:layout_constraintBottom_toBottomOf="@id/tvTime"
+            app:layout_constraintStart_toEndOf="@id/sivWeather"
+            app:layout_constraintTop_toTopOf="@id/tvTime" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:ellipsize="end"
+            android:fontFamily="@font/quicksand_semibold"
+            android:maxLines="1"
+            android:text="@{diaryModel.title}"
+            android:textAppearance="@style/TextAppearance.MyTheme.Headline7"
+            android:textColor="#8295DB"
+            app:layout_constraintTop_toBottomOf="@id/sivWeather" />
+
+        <TextView
+            android:id="@+id/tvContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:ellipsize="end"
+            android:fontFamily="@font/quicksand_medium"
+            android:maxLines="1"
+            android:text="@{diaryModel.description}"
+            android:textAppearance="@style/TextAppearance.MyTheme.CustomBody.Diary"
+            android:textColor="#1D1D1D"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

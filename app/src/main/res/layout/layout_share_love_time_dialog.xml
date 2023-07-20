@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.hola360.crushlovecalculator.ui.lovetime.LoveTimeViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_32"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="18dp">
+
+                <LinearLayout
+                    android:id="@+id/loveCard2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_love_time_share_dialog"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="20dp"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:text="@string/been_together"
+                        android:textAppearance="?textAppearanceHeadline6"
+                        android:textColor="@color/colorAccent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/dp_16">
+
+                        <LinearLayout
+                            android:id="@+id/layoutLinear1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="@id/yourAvatar"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/yourName"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dp_6"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/quicksand_regular"
+                                android:gravity="center_horizontal"
+                                android:lines="1"
+                                android:paddingStart="@dimen/dp_4"
+                                android:setLoveTimeOwnerNameDialog="@{viewModel.mLoveTimeModel}"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/crushName"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dp_6"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/quicksand_regular"
+                                android:gravity="center_horizontal"
+                                android:lines="1"
+                                android:setLoveTimeCrushNameDialog="@{viewModel.mLoveTimeModel}"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/yourAvatar"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:background="@drawable/ic_lovetest_heart_shadow"
+                            android:setOwnerAvatarDialog="@{viewModel.mLoveTimeModel}"
+                            app:layout_constraintDimensionRatio="1:0.9"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/layoutLinear1"
+                            app:layout_constraintWidth_percent="0.33" />
+
+
+                        <ImageView
+                            android:id="@+id/yourAvatarCrush"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:background="@drawable/ic_lovetest_heart_shadow"
+                            android:setCrushAvatarDialog="@{viewModel.mLoveTimeModel}"
+                            app:layout_constraintDimensionRatio="1:0.9"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/layoutLinear1"
+                            app:layout_constraintWidth_percent="0.33" />
+
+                        <ImageView
+                            android:id="@+id/img_connect_emoji"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:padding="@dimen/dp_10"
+                            android:src="@drawable/ic_connect_emoji"
+                            app:layout_constraintBottom_toBottomOf="@id/yourAvatar"
+                            app:layout_constraintDimensionRatio="2:1"
+                            app:layout_constraintEnd_toStartOf="@id/yourAvatarCrush"
+                            app:layout_constraintStart_toEndOf="@id/yourAvatar"
+                            app:layout_constraintTop_toTopOf="@id/yourAvatar" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/llDays"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true">
+
+                            <TextView
+                                android:id="@+id/resultNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:countLovingTime="@{viewModel.mLoveTimeModel}"
+                                android:fontFamily="@font/quicksand_bold"
+                                android:textAppearance="?textAppearanceHeadline4"
+                                android:textColor="@color/colorAccent" />
+
+                            <TextView
+                                android:id="@+id/text_days"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_4"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/quicksand_medium"
+                                android:paddingVertical="@dimen/dp_8"
+                                android:text="@string/string_days"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="@color/colorAccent" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/resultString"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/llDays"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/quicksand_medium"
+                            android:padding="3dp"
+                            android:startLoveTime="@{viewModel.mLoveTimeModel}"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="@color/colorAccent" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/app_name"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/bg_love_time_share" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/download"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginBottom="@dimen/dp_16"
+                    android:src="@drawable/ic_dialog_result_download" />
+
+                <ImageView
+                    android:id="@+id/share"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginBottom="@dimen/dp_16"
+                    android:src="@drawable/ic_dialog_result_share" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

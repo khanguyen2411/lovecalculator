@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="nation"
+            type="com.hola360.crushlovecalculator.dialog.nationdialog.NationModel" />
+
+        <variable
+            name="isSelect"
+            type="boolean" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/nationLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@{isSelect ? @color/select_item_background: @color/md_white_1000}"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/dp_8">
+
+            <com.caverock.androidsvg.SVGImageView
+                android:layout_width="@dimen/dp_32"
+                android:layout_height="@dimen/dp_32"
+                android:layout_marginHorizontal="@dimen/v_margin"
+                android:loadFlag="@{nation}"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/quicksand_medium"
+                android:lines="1"
+                android:text="@{nation.nationInformation.name}"
+                android:textAppearance="?textAppearanceBody1" />
+
+            <ImageView
+                android:id="@+id/selectIcon"
+                android:layout_width="@dimen/dp_32"
+                android:layout_height="@dimen/dp_32"
+                android:layout_marginEnd="5dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_profile_selected_item"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#A3A3A3" />
+
+    </LinearLayout>
+
+
+</layout>

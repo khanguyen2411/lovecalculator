@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.hola360.crushlovecalculator.ui.lovetime.emoijconnect.EmojiViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorAccent"
+            android:theme="@style/Theme.App.AppBarOverlay"
+            app:contentInsetStartWithNavigation="@dimen/dp_4"
+            app:navigationIcon="@drawable/ic_toolbar_back"
+            app:popupTheme="@style/Theme.App.PopupOverlay"
+            app:title="@string/string_lovetime_conect_emoij"
+            app:titleTextAppearance="?textAppearanceHeadline6"
+            app:titleTextColor="@color/md_white_1000" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/md_white_1000">
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/mySwipeRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycleview"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:paddingHorizontal="@dimen/dp_16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/colorAccent"
+                android:indeterminateTintMode="src_atop"
+                android:visibility="@{viewModel.isLoading()?View.VISIBLE :View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/md_white_1000"
+                android:visibility="@{viewModel.isEmpty()? View.VISIBLE : View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/image_no_internet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_20"
+                    android:src="@drawable/ic_img_no_internet"
+                    app:layout_constraintBottom_toTopOf="@id/text_no_internet"
+                    app:layout_constraintDimensionRatio="1.5:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/text_no_internet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_lovetime_emoij_no_internet"
+                    android:textAllCaps="true"
+                    android:textAppearance="?textAppearanceBody1"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_nofication"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:paddingStart="@dimen/dp_64"
+                    android:paddingEnd="@dimen/dp_20"
+                    android:text="@string/string_lovetime_emoij_you_offline"
+                    android:textAppearance="?textAppearanceBody1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_no_internet" />
+
+                <TextView
+                    android:id="@+id/text_Tab_To_Retry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:background="@drawable/bg_button_emoij"
+                    android:onClick="@{()->viewModel.retry()}"
+                    android:text="@string/string_lovetime_emoij_tab_to_retry"
+                    android:textAppearance="?textAppearanceBody1"
+                    android:textColor="@color/md_white_1000"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_nofication" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</layout>

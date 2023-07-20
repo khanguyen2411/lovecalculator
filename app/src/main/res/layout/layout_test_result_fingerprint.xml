@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="yourProfile"
+            type="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+        <variable
+            name="crushProfile"
+            type="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_collapseMode="parallax">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:src="@drawable/ic_test_result_banner_2"
+                        app:layout_constraintDimensionRatio="1081:694"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="0dp"
+                    app:layout_collapseMode="pin">
+
+                    <include
+                        android:id="@+id/toolbar"
+                        layout="@layout/layout_toolbar_result"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_love_test_result_1"
+            app:layout_anchor="@id/appBarLayout"
+            app:layout_anchorGravity="bottom"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                style="@style/LoveTestContentLayoutStyle"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/guideline">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginHorizontal="20dp">
+
+                    <LinearLayout
+                        android:id="@+id/txtYourPhoto"
+                        app:layout_constraintStart_toStartOf="@id/yourFingerLayout"
+                        app:layout_constraintEnd_toEndOf="@id/yourFingerLayout"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/yourName"
+                            style="@style/ResultNameTextStyle"/>
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:id="@+id/yourFingerLayout"
+                        android:background="@drawable/bg_fingerprint"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/v_margin"
+                        android:elevation="3dp"
+                        app:layout_constraintTop_toBottomOf="@id/txtYourPhoto"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginBottom="5dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="15dp"
+                        app:layout_constraintWidth_percent="0.33"
+                        app:layout_constraintDimensionRatio="1:1">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_lovetest_fingerprint_left"
+                            android:padding="15dp" />
+
+                        <View
+                            android:id="@+id/yourBorderView"
+                            android:background="@drawable/bg_fingerprint_normal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                    </FrameLayout>
+
+                    <ImageView
+                        style="@style/ResultHeartStyle"
+                        app:layout_constraintVertical_bias="0.3"
+                        app:layout_constraintStart_toEndOf="@id/yourFingerLayout"
+                        app:layout_constraintEnd_toStartOf="@id/crushFingerLayout"
+                        app:layout_constraintTop_toTopOf="@id/yourFingerLayout"
+                        app:layout_constraintBottom_toBottomOf="@id/yourFingerLayout"/>
+
+                    <LinearLayout
+                        android:id="@+id/txtCrushPhoto"
+                        app:layout_constraintStart_toStartOf="@id/crushFingerLayout"
+                        app:layout_constraintEnd_toEndOf="@id/crushFingerLayout"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/crushName"
+                            style="@style/ResultNameTextStyle"/>
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:id="@+id/crushFingerLayout"
+                        android:background="@drawable/bg_fingerprint"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/v_margin"
+                        android:elevation="3dp"
+                        app:layout_constraintTop_toBottomOf="@id/txtYourPhoto"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginBottom="5dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintWidth_percent="0.33"
+                        app:layout_constraintDimensionRatio="1:1">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_lovetest_fingerprint_right"
+                            android:padding="15dp" />
+
+                        <View
+                            android:id="@+id/crushBorderView"
+                            android:background="@drawable/bg_fingerprint_normal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                    </FrameLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include
+                        android:id="@+id/action"
+                        layout="@layout/layout_test_result_action"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

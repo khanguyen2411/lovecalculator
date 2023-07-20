@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="actionModel"
+            type="com.hola360.crushlovecalculator.ui.event.popup.EventActionModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/myLayoutRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_8">
+
+        <ImageView
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_weight="0"
+            android:contentDescription= "@string/app_name"
+            android:padding="@dimen/dp_4"
+            android:iconForAction="@{actionModel}" />
+
+        <TextView
+            android:fontFamily="@font/quicksand_medium"
+            android:textColor="#1c1c1c"
+            android:id="@+id/myTextViewActionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_8"
+            android:layout_weight="1"
+            android:lines="1"
+            android:text="@{actionModel.title}"
+            android:textAppearance="?textAppearanceBody1"
+            android:textSize="@dimen/sp_15" />
+
+    </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FEC3E1">
+
+        <ImageView
+            android:id="@+id/privacyBanner"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/banner_confirm"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.6"
+            app:layout_constraintVertical_bias="0"/>
+        
+        <ImageView
+            android:id="@+id/confirm_cancel"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/ic_confirm_back"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:padding="5dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:elevation="3dp"
+            android:background="@drawable/bg_circle_button"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_confirm_privacy_bottom"
+            app:layout_constraintTop_toBottomOf="@id/privacyBanner"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.3"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@drawable/ic_confirm_crush_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"/>
+
+                <LinearLayout
+                    android:id="@+id/agree"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center_vertical"
+                    android:elevation="5dp"
+                    android:background="@drawable/bg_confirm_agree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp">
+
+                    <TextView
+                        android:text="@string/privacy_policy_agree"
+                        android:paddingVertical="@dimen/v_margin"
+                        android:paddingStart="20dp"
+                        android:textSize="16dp"
+                        android:gravity="center_vertical"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:textColor="@color/md_white_1000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:scaleType="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginStart="@dimen/v_margin"
+                        android:src="@drawable/ic_privacy_agree_forward"
+                        android:layout_marginEnd="15dp"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/privacyText"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:fontFamily="@font/quicksand_regular"
+                    android:lineSpacingExtra="5dp"
+                    android:textSize="12dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/privacy_policy_text"/>
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

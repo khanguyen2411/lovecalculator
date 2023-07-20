@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="yourProfile"
+            type="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+        <variable
+            name="crushProfile"
+            type="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/loveCard"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_result_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/resultString"
+                style="@style/ResultDialogTitleStyle"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginHorizontal="20dp">
+
+                <LinearLayout
+                    android:id="@+id/txtYourPhoto"
+                    app:layout_constraintStart_toStartOf="@id/yourFingerLayout"
+                    app:layout_constraintEnd_toEndOf="@id/yourFingerLayout"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/yourName"
+                        style="@style/ResultNameTextStyle"/>
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/yourFingerLayout"
+                    android:background="@drawable/bg_fingerprint"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/v_margin"
+                    android:elevation="3dp"
+                    app:layout_constraintTop_toBottomOf="@id/txtYourPhoto"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="5dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="15dp"
+                    app:layout_constraintWidth_percent="0.33"
+                    app:layout_constraintDimensionRatio="1:1">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_lovetest_fingerprint_left"
+                        android:padding="15dp" />
+
+                    <View
+                        android:id="@+id/yourBorderView"
+                        android:background="@drawable/bg_fingerprint_normal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/ic_test_result_heart"
+                    app:layout_constraintDimensionRatio="63:32"
+                    app:layout_constraintWidth_percent="0.2"
+                    app:layout_constraintVertical_bias="0.3"
+                    app:layout_constraintStart_toEndOf="@id/yourFingerLayout"
+                    app:layout_constraintEnd_toStartOf="@id/crushFingerLayout"
+                    app:layout_constraintTop_toTopOf="@id/yourFingerLayout"
+                    app:layout_constraintBottom_toBottomOf="@id/yourFingerLayout"/>
+
+                <LinearLayout
+                    android:id="@+id/txtCrushPhoto"
+                    app:layout_constraintStart_toStartOf="@id/crushFingerLayout"
+                    app:layout_constraintEnd_toEndOf="@id/crushFingerLayout"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/crushName"
+                        style="@style/ResultNameTextStyle"/>
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/crushFingerLayout"
+                    android:background="@drawable/bg_fingerprint"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/v_margin"
+                    android:elevation="3dp"
+                    app:layout_constraintTop_toBottomOf="@id/txtYourPhoto"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="15dp"
+                    app:layout_constraintWidth_percent="0.33"
+                    app:layout_constraintDimensionRatio="1:1">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_lovetest_fingerprint_right"
+                        android:padding="15dp" />
+
+                    <View
+                        android:id="@+id/crushBorderView"
+                        android:background="@drawable/bg_fingerprint_normal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                </FrameLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/resultNumber"
+                android:textSize="@dimen/result_dialog_percent_text_height"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                style="@style/ResultNumberText"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
+
+                <include
+                    android:id="@+id/heartPercent"
+                    layout="@layout/layout_result_dialog_percent" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/dialogBottom"
+                layout="@layout/layout_result_dialog_bottom" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

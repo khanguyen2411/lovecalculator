@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main_graph"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.hola360.crushlovecalculator.ui.home.HomeFragment"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_confirm_privacy"
+        android:name="com.hola360.crushlovecalculator.ui.confirmprivacy.ConfirmPrivacyFragment"
+        tools:layout="@layout/fragment_confirm_privacy" />
+
+    <fragment
+        android:id="@+id/nav_privacy_term_of_service"
+        android:name="com.hola360.crushlovecalculator.ui.confirmprivacy.PrivacyAndTermOfService"
+        tools:layout="@layout/layout_privacy_term_of_service">
+        <argument
+            android:name="isPrivacy"
+            app:argType="boolean" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_to_nav_privacy"
+        app:destination="@id/nav_confirm_privacy"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    <action
+        android:id="@+id/action_to_nav_privacy_term_of_service"
+        app:destination="@id/nav_privacy_term_of_service"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.hola360.crushlovecalculator.ui.profile.ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <argument
+            android:name="isCrush"
+            app:argType="boolean" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_to_nav_profile"
+        app:destination="@id/nav_profile"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    <fragment
+        android:id="@+id/nav_take_picture"
+        android:name="com.hola360.crushlovecalculator.ui.profile.TakePicture"
+        tools:layout="@layout/layout_take_pickture" />
+
+    <action
+        android:id="@+id/action_to_nav_take_picture"
+        app:destination="@id/nav_take_picture"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    <fragment
+        android:id="@+id/nav_love_test"
+        android:name="com.hola360.crushlovecalculator.ui.lovetest.LoveTestFragment"
+        android:label="LoveTestFragment" />
+
+    <action
+        android:id="@+id/action_to_nav_love_test"
+        app:destination="@id/nav_love_test"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim" />
+
+    <fragment
+        android:id="@+id/nav_card_love"
+        android:name="com.hola360.crushlovecalculator.ui.cardlove.CardLoveFragment"
+        android:label="CardLoveFragment" />
+
+    <fragment
+        android:id="@+id/nav_love_time"
+        android:name="com.hola360.crushlovecalculator.ui.lovetime.LoveTimeFragment"
+        android:label="LoveTimeFragment" />
+
+    <action
+        android:id="@+id/action_global_loveTimeFragment"
+        app:destination="@id/nav_love_time"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    <fragment
+        android:id="@+id/nav_love_diary"
+        android:name="com.hola360.crushlovecalculator.ui.lovediary.LoveDiaryFragment"
+        android:label="LoveDiaryFragment" />
+
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.hola360.crushlovecalculator.ui.setting.SettingFragment"
+        android:label="SettingFragment" />
+
+    <fragment
+        android:id="@+id/nav_connect"
+        android:name="com.hola360.crushlovecalculator.ui.connect.ConnectFragment"
+        android:label="ConnectFragment" />
+
+    <fragment
+        android:id="@+id/nav_my_photo"
+        android:name="com.hola360.crushlovecalculator.ui.myphoto.MyPhotoFragment"
+        android:label="MyPhotoFragment" />
+
+    <fragment
+        android:id="@+id/nav_play_game"
+        android:name="com.hola360.crushlovecalculator.ui.playgame.PlayGameFragment"
+        android:label="PlayGameFragment" />
+
+    <fragment
+        android:id="@+id/nav_test_photo"
+        android:name="com.hola360.crushlovecalculator.ui.lovetest.photo.TestPhotoFragment"
+        android:label="TestPhotoFragment" />
+    <fragment
+        android:id="@+id/nav_test_name"
+        android:name="com.hola360.crushlovecalculator.ui.lovetest.name.TestNameFragment"
+        android:label="TestNameFragment" />
+    <fragment
+        android:id="@+id/nav_test_fingerprint"
+        android:name="com.hola360.crushlovecalculator.ui.lovetest.fingerprint.TestFingerprintFragment"
+        android:label="TestFingerprintFragment" />
+    <fragment
+        android:id="@+id/nav_test_birthday"
+        android:name="com.hola360.crushlovecalculator.ui.lovetest.birthday.TestBirthdayFragment"
+        android:label="TestBirthdayFragment" />
+    <fragment
+        android:id="@+id/nav_test_nationality"
+        android:name="com.hola360.crushlovecalculator.ui.lovetest.nationality.TestNationalityFragment"
+        android:label="TestNationalityFragment" />
+    <fragment
+        android:id="@+id/nav_test_bmi"
+        android:name="com.hola360.crushlovecalculator.ui.lovetest.bmi.TestBmiFragment"
+        android:label="TestBmiFragment" />
+    <fragment
+        android:id="@+id/nav_test_job"
+        android:name="com.hola360.crushlovecalculator.ui.lovetest.job.TestJobFragment"
+        android:label="TestJobFragment" />
+
+    <fragment
+        android:id="@+id/nav_test_result_animation"
+        android:name="com.hola360.crushlovecalculator.ui.lovetest.result.resultanimation.TestResultAnimation"
+        android:label="TestResultAnimation"
+        tools:layout="@layout/fragment_test_result_animation">
+        <argument
+            android:name="yourProfile"
+            app:argType="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+        <argument
+            android:name="crushProfile"
+            app:argType="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+        <argument
+            android:name="testType"
+            app:argType="integer" />
+        <argument
+            android:name="testResult"
+            app:argType="integer" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_to_nav_test_result_animation"
+        app:destination="@id/nav_test_result_animation"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+
+    <fragment
+        android:id="@+id/nav_detail_photo"
+        android:name="com.hola360.crushlovecalculator.ui.myphoto.detail.DetailPhotoFragment"
+        android:label="DetailPhotoFragment">
+        <argument
+            android:name="curPos"
+            app:argType="integer" />
+        <argument
+            android:name="oldestDateFirst"
+            app:argType="boolean" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_to_nav_detail_photo"
+        app:destination="@id/nav_detail_photo"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+
+    <fragment
+        android:id="@+id/nav_test_result_photo"
+        android:name="com.hola360.crushlovecalculator.ui.lovetest.result.TestResultPhotoFragment"
+        android:label="TestResultPhotoFragment">
+        <argument
+            android:name="yourProfile"
+            app:argType="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+        <argument
+            android:name="crushProfile"
+            app:argType="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+        <argument
+            android:name="testType"
+            app:argType="integer" />
+        <argument
+            android:name="testResult"
+            app:argType="integer" />
+        <argument
+            android:name="stringResult"
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_to_nav_test_result_photo"
+        app:destination="@id/nav_test_result_photo"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    <fragment
+        android:id="@+id/nav_test_result_name"
+        android:name="com.hola360.crushlovecalculator.ui.lovetest.result.TestResultNameFragment"
+        android:label="TestResultPhotoFragment">
+        <argument
+            android:name="yourProfile"
+            app:argType="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+        <argument
+            android:name="crushProfile"
+            app:argType="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+        <argument
+            android:name="testType"
+            app:argType="integer" />
+        <argument
+            android:name="testResult"
+            app:argType="integer" />
+        <argument
+            android:name="stringResult"
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_to_nav_test_result_name"
+        app:destination="@id/nav_test_result_name"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    <fragment
+        android:id="@+id/nav_test_result_fingerprint"
+        android:name="com.hola360.crushlovecalculator.ui.lovetest.result.TestResultFingerprintFragment"
+        android:label="TestResultPhotoFragment">
+        <argument
+            android:name="yourProfile"
+            app:argType="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+        <argument
+            android:name="crushProfile"
+            app:argType="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+        <argument
+            android:name="testType"
+            app:argType="integer" />
+        <argument
+            android:name="testResult"
+            app:argType="integer" />
+        <argument
+            android:name="stringResult"
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_to_nav_test_result_fingerprint"
+        app:destination="@id/nav_test_result_fingerprint"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    <fragment
+        android:id="@+id/nav_test_result_birthday"
+        android:name="com.hola360.crushlovecalculator.ui.lovetest.result.TestResultBirthdayFragment"
+        android:label="TestResultPhotoFragment">
+        <argument
+            android:name="yourProfile"
+            app:argType="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+        <argument
+            android:name="crushProfile"
+            app:argType="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+        <argument
+            android:name="testType"
+            app:argType="integer" />
+        <argument
+            android:name="testResult"
+            app:argType="integer" />
+        <argument
+            android:name="stringResult"
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_to_nav_test_result_birthday"
+        app:destination="@id/nav_test_result_birthday"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    <fragment
+        android:id="@+id/nav_test_result_nation"
+        android:name="com.hola360.crushlovecalculator.ui.lovetest.result.TestResultNationFragment"
+        android:label="TestResultPhotoFragment">
+        <argument
+            android:name="yourProfile"
+            app:argType="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+        <argument
+            android:name="crushProfile"
+            app:argType="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+        <argument
+            android:name="testType"
+            app:argType="integer" />
+        <argument
+            android:name="testResult"
+            app:argType="integer" />
+        <argument
+            android:name="stringResult"
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_to_nav_test_result_nation"
+        app:destination="@id/nav_test_result_nation"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    <fragment
+        android:id="@+id/nav_test_result_bmi"
+        android:name="com.hola360.crushlovecalculator.ui.lovetest.result.TestResultBmiFragment"
+        android:label="TestResultPhotoFragment">
+        <argument
+            android:name="yourProfile"
+            app:argType="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+        <argument
+            android:name="crushProfile"
+            app:argType="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+        <argument
+            android:name="testType"
+            app:argType="integer" />
+        <argument
+            android:name="testResult"
+            app:argType="integer" />
+        <argument
+            android:name="stringResult"
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_to_nav_test_result_bmi"
+        app:destination="@id/nav_test_result_bmi"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    <fragment
+        android:id="@+id/nav_test_result_job"
+        android:name="com.hola360.crushlovecalculator.ui.lovetest.result.TestResultJobFragment"
+        android:label="TestResultPhotoFragment">
+        <argument
+            android:name="yourProfile"
+            app:argType="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+        <argument
+            android:name="crushProfile"
+            app:argType="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+        <argument
+            android:name="testType"
+            app:argType="integer" />
+        <argument
+            android:name="testResult"
+            app:argType="integer" />
+        <argument
+            android:name="stringResult"
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_to_nav_test_result_job"
+        app:destination="@id/nav_test_result_job"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    <fragment
+        android:id="@+id/imageStoreFragment"
+        android:name="com.hola360.crushlovecalculator.ui.lovetime.store.ImageStoreFragment"
+        android:label="ImageStoreFragment" />
+    <action
+        android:id="@+id/action_global_imageStoreFragment"
+        app:destination="@id/imageStoreFragment" />
+    <fragment
+        android:id="@+id/themeStoreFragment"
+        android:name="com.hola360.crushlovecalculator.ui.lovetheme.ThemeStoreFragment"
+        android:label="ThemeStoreFragment"
+        tools:layout="@layout/fragment_theme" />
+    <action
+        android:id="@+id/action_global_themeStoreFragment"
+        app:destination="@id/themeStoreFragment" />
+
+    <fragment
+        android:id="@+id/themePreviewFragment"
+        android:name="com.hola360.crushlovecalculator.ui.lovetime.preview.ThemePreviewFragment">
+        <argument
+            android:name="itemId"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_themePreviewFragment"
+        app:destination="@id/themePreviewFragment">
+        <argument
+            android:name="itemId"
+            android:defaultValue=""
+            app:argType="string" />
+    </action>
+
+    <fragment
+        android:id="@+id/eventFragment"
+        android:name="com.hola360.crushlovecalculator.ui.event.EventFragment"
+        android:label="EventFragment">
+        <action
+            android:id="@+id/action_eventFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment">
+            <argument
+                android:name="eventModel"
+                app:argType="com.hola360.crushlovecalculator.data.model.event.EventModel"
+                app:nullable="true" />
+        </action>
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_eventFragment"
+        app:destination="@id/eventFragment" />
+
+    <fragment
+        android:id="@+id/eventDetailFragment"
+        android:name="com.hola360.crushlovecalculator.ui.event.eventdetail.EventDetailFragment"
+        android:label="Detail Fragment"
+        tools:layout="@layout/fragment_event_detail">
+
+        <argument
+            android:name="eventModel"
+            app:argType="com.hola360.crushlovecalculator.data.model.event.EventModel"
+            app:nullable="true" />
+
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_eventDetailFragment"
+        app:destination="@id/eventDetailFragment">
+        <argument
+            android:name="eventModel"
+            app:argType="com.hola360.crushlovecalculator.data.model.event.EventModel"
+            app:nullable="true" />
+    </action>
+
+    <fragment
+        android:id="@+id/nav_to_cover_store"
+        android:name="com.hola360.crushlovecalculator.ui.event.store.CoverStoreDialogFragment"
+        android:label="CoverStoreDialogFragment" />
+
+    <fragment
+        android:id="@+id/storyDetailFragment"
+        android:name="com.hola360.crushlovecalculator.ui.event.storydetail.StoryDetailFragment"
+        android:label="StoryDetailFragment"
+        tools:layout="@layout/fragment_story_detail">
+        <argument
+            android:name="storyModel"
+            app:argType="com.hola360.crushlovecalculator.data.model.story.StoryModel"
+            app:nullable="true" />
+
+        <argument
+            android:name="eventModel"
+            app:argType="com.hola360.crushlovecalculator.data.model.event.EventModel"
+            app:nullable="true" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_storyDetailFragment"
+        app:destination="@id/storyDetailFragment">
+        <argument
+            android:name="storyModel"
+            app:argType="com.hola360.crushlovecalculator.data.model.story.StoryModel"
+            app:nullable="true" />
+
+        <argument
+            android:name="eventModel"
+            app:argType="com.hola360.crushlovecalculator.data.model.event.EventModel"
+            app:nullable="true" />
+    </action>
+
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.hola360.crushlovecalculator.ui.lovediary.calendar.CalendarFragment"
+        android:label="Calendar" />
+
+    <action
+        android:id="@+id/action_global_calendarFragment"
+        app:destination="@id/calendarFragment" />
+
+    <fragment
+        android:id="@+id/searchDiaryFragment"
+        android:name="com.hola360.crushlovecalculator.ui.lovediary.search.SearchDiaryFragment"
+        android:label="Search Diary" />
+
+    <action
+        android:id="@+id/action_global_searchDiaryFragment"
+        app:destination="@id/searchDiaryFragment" />
+</navigation>

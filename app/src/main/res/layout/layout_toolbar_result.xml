@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:scaleType="center"
+            android:contentDescription="@string/app_name"
+            android:id="@+id/back"
+            style="@style/CircleButtonStyle"
+            android:src="@drawable/ic_toolbar_back_small"
+            app:tint="#6282A9" />
+
+        <TextView
+            android:id="@+id/toolbarTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:shadowColor="@color/text_shadow"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:textAppearance="?textAppearanceHeadline6"
+            android:textColor="#545353" />
+
+        <ImageView
+            android:scaleType="centerInside"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:id="@+id/download"
+            style="@style/CircleButtonStyle"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_dialog_result_download"
+            app:tint="#6282A9" />
+
+    </LinearLayout>
+</layout>

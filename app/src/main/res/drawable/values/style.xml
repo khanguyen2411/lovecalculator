@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="TextAppearanceToolbar" >
+        <item name="android:textSize">20dp</item>
+        <item name="android:layout_marginStart">@dimen/v_margin</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+    </style>
+
+    <style name="CircleButtonStyle" >
+        <item name="android:layout_width">@dimen/circle_button_height</item>
+        <item name="android:layout_height">@dimen/circle_button_height</item>
+        <item name="android:padding">7dp</item>
+        <item name="android:background">@drawable/bg_circle_button</item>
+        <item name="android:elevation">5dp</item>
+        <item name="android:layout_marginTop">@dimen/h_margin</item>
+        <item name="android:layout_marginStart">19dp</item>
+        <item name="android:layout_marginEnd">19dp</item>
+        <item name="android:layout_marginBottom">@dimen/h_margin</item>
+    </style>
+
+    <style name="HomeMenuLayoutStyle" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">?selectableItemBackground</item>
+    </style>
+
+    <style name="HomeMenuIconStyle" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">25dp</item>
+    </style>
+
+    <style name="HomeMenuTextStyle" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+    </style>
+
+    <style name="HomeFeatureLayoutStyle" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">?selectableItemBackground</item>
+    </style>
+
+    <style name="HomeFeatureIconStyle" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">60dp</item>
+    </style>
+
+    <style name="HomeFeatureTextStyle" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+        <item name="android:textColor">#D8464A</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="ProfileLayout" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginTop">30dp</item>
+    </style>
+
+    <style name="ProfileLayout2" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ProfileEditTextStyle" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+        <item name="android:background">@null</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textColor">#555555</item>
+    </style>
+
+    <style name="ProfileDivineStyle" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">#D2ADE5</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="ProfileTextUnitStyle" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">#555555</item>
+        <item name="android:drawableEnd">@drawable/ic_profile_expand_more</item>
+        <item name="android:layout_marginEnd">@dimen/v_margin</item>
+    </style>
+
+    <style name="BottomSheetTopView" >
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">5dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:background">@drawable/bg_top_view_bottom_sheet</item>
+    </style>
+
+    <style name="BottomSheetTitle" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#5D5C5C</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="BottomSheetClose" >
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:tint">#868585</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:src">@drawable/ic_confirm_back</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="BottomSheetLayoutItem" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+    </style>
+
+    <style name="BottomSheetItemText" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+        <item name="android:layout_marginStart">20dp</item>
+    </style>
+
+    <style name="ProfileUpdateButton" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+        <item name="android:minWidth">100dp</item>
+        <item name="android:background">@drawable/bg_profile_update</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:paddingStart">40dp</item>
+        <item name="android:paddingEnd">40dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+        <item name="android:textSize">24dp</item>
+    </style>
+
+    <style name="TestBirthdayEditTextStyle" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+        <item name="android:background">@null</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textColor">#555555</item>
+        <item name="android:inputType">textCapWords</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+    </style>
+
+    <style name="HeightEditTextStyle" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:maxLength">5</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+        <item name="android:background">@null</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textColor">#555555</item>
+    </style>
+
+    <style name="LoveTestScrollStyle" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">#FFF4F9</item>
+    </style>
+
+    <style name="LoveTestContentLayoutStyle" >
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_lovetest_menu</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="BirthdayTitleLayoutStyle" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginTop">25dp</item>
+        <item name="android:layout_marginStart">35dp</item>
+        <item name="android:layout_marginEnd">35dp</item>
+    </style>
+
+    <style name="BirthdayIconStyle" >
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">25dp</item>
+    </style>
+
+    <style name="BirthdayTitleStyle" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:fontFamily">@font/quicksand_semibold</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">#F35661</item>
+    </style>
+
+    <style name="BirthdayErrorTextStyle" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">start</item>
+        <item name="android:fontFamily">@font/quicksand_regular</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/error_color</item>
+        <item name="android:layout_marginStart">40dp</item>
+    </style>
+
+    <style name="BirthdayContentLayoutStyle" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:elevation">3dp</item>
+    </style>
+
+    <style name="NameInputLayoutStyle" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/lovetest_edt_height</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:elevation">3dp</item>
+    </style>
+
+    <style name="TestAgainButton" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/quicksand_semibold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minWidth">150dp</item>
+        <item name="android:background">@drawable/bg_profile_update</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+        <item name="android:textSize">22dp</item>
+    </style>
+
+    <style name="ResultNumberText" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">60dp</item>
+    </style>
+
+    <style name="ResultStringText" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/quicksand_semibold</item>
+        <item name="android:textColor">#676666</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="ResultNameTextStyle" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">#454545</item>
+    </style>
+
+    <style name="ResultHeartStyle" >
+        <item name="android:layout_width">63dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:src">@drawable/ic_test_result_heart</item>
+    </style>
+
+    <style name="ResultDialogTitleStyle" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+        <item name="android:textSize">24dp</item>
+    </style>
+
+    <style name="ResultDialogNameTextStyle" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#464545</item>
+        <item name="android:fontFamily">@font/quicksand_semibold</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="SortItemTextStyle" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:buttonTint">@color/colorAccent</item>
+    </style>
+
+    <style name="ConfirmButton" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/quicksand_semibold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minWidth">120dp</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+</resources>

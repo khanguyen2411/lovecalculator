@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="date"
+            type="com.hola360.crushlovecalculator.ui.lovediary.model.Date" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:setupDateBackground="@{date}"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_7"
+        android:paddingBottom="@dimen/dp_5">
+
+        <TextView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:fontFamily="@font/quicksand_semibold"
+            android:paddingTop="@dimen/dp_6"
+            android:paddingHorizontal="@dimen/dp_6"
+            android:paddingBottom="@dimen/dp_1"
+            android:setupDateText="@{date}"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="@dimen/dp_5"
+            android:layout_height="@dimen/dp_5"
+            android:setupDateView="@{date}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDate" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

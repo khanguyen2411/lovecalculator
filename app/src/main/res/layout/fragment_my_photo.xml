@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.hola360.crushlovecalculator.ui.myphoto.MyPhotoViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/CustomToolBar"
+            app:contentInsetStartWithNavigation="@dimen/dp_4"
+            app:menu="@menu/menu_photo_normal"
+            app:navigationIcon="@drawable/ic_toolbar_back"
+            app:title="@string/my_photo_title"
+            app:titleTextAppearance="?textAppearanceHeadline6"
+            app:titleTextColor="@color/md_white_1000" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/myPhotoRv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/dp_8" />
+
+            <ProgressBar
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:visibility="@{viewModel.isLoading?View.VISIBLE:View.GONE}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="@{viewModel.isEmpty?View.VISIBLE:View.GONE}">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_my_photo_empty" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:gravity="center"
+                    android:text="@string/my_photo_empty"
+                    android:textAppearance="?textAppearanceBody1"
+                    android:textColor="@color/colorAccent" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="yourProfile"
+            type="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+        <variable
+            name="crushProfile"
+            type="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/loveCard"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_result_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/resultString"
+                style="@style/ResultDialogTitleStyle"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp">
+
+                <LinearLayout
+                    android:id="@+id/txtYourPhoto"
+                    app:layout_constraintStart_toStartOf="@id/yourPhoto"
+                    app:layout_constraintEnd_toEndOf="@id/yourPhoto"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/yourName"
+                        style="@style/ResultNameTextStyle"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/yourPhoto"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    setLovetestPhoto="@{yourProfile.avatarUrl}"
+                    android:layout_marginTop="@dimen/v_margin"
+                    android:background="@drawable/ic_lovetest_heart_shadow"
+                    app:layout_constraintTop_toBottomOf="@id/txtYourPhoto"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="15dp"
+                    app:layout_constraintWidth_percent="0.33"
+                    app:layout_constraintDimensionRatio="112:99"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/ic_test_result_heart"
+                    app:layout_constraintDimensionRatio="63:32"
+                    app:layout_constraintWidth_percent="0.2"
+                    app:layout_constraintVertical_bias="0.2"
+                    app:layout_constraintStart_toEndOf="@id/yourPhoto"
+                    app:layout_constraintEnd_toStartOf="@id/crushPhoto"
+                    app:layout_constraintTop_toTopOf="@id/yourPhoto"
+                    app:layout_constraintBottom_toBottomOf="@id/yourPhoto"/>
+
+                <LinearLayout
+                    android:id="@+id/txtCrushPhoto"
+                    app:layout_constraintStart_toStartOf="@id/crushPhoto"
+                    app:layout_constraintEnd_toEndOf="@id/crushPhoto"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/crushName"
+                        style="@style/ResultNameTextStyle"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/crushPhoto"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    setLovetestPhoto="@{crushProfile.avatarUrl}"
+                    android:layout_marginTop="@dimen/v_margin"
+                    android:background="@drawable/ic_lovetest_heart_shadow"
+                    android:elevation="3dp"
+                    app:layout_constraintTop_toBottomOf="@id/txtCrushPhoto"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="15dp"
+                    app:layout_constraintWidth_percent="0.33"
+                    app:layout_constraintDimensionRatio="112:99"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/resultNumber"
+                android:textSize="@dimen/result_dialog_percent_text_height"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                style="@style/ResultNumberText"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
+
+                <include
+                    android:id="@+id/heartPercent"
+                    layout="@layout/layout_result_dialog_percent" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/dialogBottom"
+                layout="@layout/layout_result_dialog_bottom" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

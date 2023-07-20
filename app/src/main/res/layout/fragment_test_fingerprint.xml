@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="yourScanDone"
+            type="boolean" />
+
+        <variable
+            name="crushScanDone"
+            type="boolean" />
+
+        <variable
+            name="error"
+            type="boolean" />
+        <import type="android.view.View" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_collapseMode="parallax">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:src="@drawable/ic_lovetest_banner_1"
+                            app:layout_constraintDimensionRatio="1081:564"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="0dp"
+                        app:layout_collapseMode="pin">
+
+                        <include
+                            android:id="@+id/toolbar"
+                            layout="@layout/layout_toolbar_transparent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.appcompat.widget.Toolbar>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <com.hola360.crushlovecalculator.ui.lovetest.CustomScrollView
+                android:id="@+id/scroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_love_test_scroll"
+                app:layout_anchor="@id/appBarLayout"
+                app:layout_anchorGravity="bottom"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    style="@style/LoveTestContentLayoutStyle"
+                    android:layout_width="match_parent"
+                    app:layout_constraintTop_toBottomOf="@id/guideline">
+
+                    <LinearLayout
+                        android:id="@+id/txtYourName"
+                        style="@style/NameInputLayoutStyle"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/bg_lovetest_editext">
+
+                        <EditText
+                            android:id="@+id/edtYourName"
+                            style="@style/TestBirthdayEditTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:hint="@string/home_your_name" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/txtCrushName"
+                        style="@style/NameInputLayoutStyle"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/bg_lovetest_editext">
+
+                        <EditText
+                            android:id="@+id/edtCrushName"
+                            style="@style/TestBirthdayEditTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:hint="@string/love_test_crush_name" />
+
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:id="@+id/txtYourPhoto"
+                            style="@style/ProfileEditTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/love_test_fingerprint_yours"
+                            android:textSize="15dp"
+                            app:layout_constraintEnd_toEndOf="@id/yourFingerLayout"
+                            app:layout_constraintStart_toStartOf="@id/yourFingerLayout"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <FrameLayout
+                            android:id="@+id/yourFingerLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="@dimen/v_margin"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/bg_fingerprint"
+                            android:elevation="3dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/txtYourPhoto"
+                            app:layout_constraintWidth_percent="0.33">
+
+                            <ImageView
+                                android:id="@+id/yourPhoto"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:alpha="0.2"
+                                android:padding="15dp"
+                                android:src="@drawable/ic_lovetest_fingerprint_left" />
+
+                            <include
+                                android:id="@+id/yourScan"
+                                layout="@layout/layout_fingerprint_scan"
+                                android:visibility="invisible" />
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="top|end"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/ic_profile_done"
+                                android:visibility="@{yourScanDone? View.VISIBLE: View.GONE}"
+                                app:tint="#64C879" />
+
+                            <View
+                                android:id="@+id/yourBorderView"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@{(!yourScanDone &amp;&amp; error)? @drawable/bg_fingerprint_error : @drawable/bg_fingerprint_normal}" />
+
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/txtCrushPhoto"
+                            style="@style/ProfileEditTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/love_test_fingerprint_crushs"
+                            android:textSize="15dp"
+                            app:layout_constraintEnd_toEndOf="@id/crushFingerLayout"
+                            app:layout_constraintStart_toStartOf="@id/crushFingerLayout"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <FrameLayout
+                            android:id="@+id/crushFingerLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="@dimen/v_margin"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/bg_fingerprint"
+                            android:elevation="3dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/txtYourPhoto"
+                            app:layout_constraintWidth_percent="0.33">
+
+                            <ImageView
+                                android:id="@+id/crushPhoto"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:alpha="0.2"
+                                android:padding="15dp"
+                                android:src="@drawable/ic_lovetest_fingerprint_right" />
+
+                            <include
+                                android:id="@+id/crushScan"
+                                layout="@layout/layout_fingerprint_scan"
+                                android:visibility="invisible" />
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="top|end"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/ic_profile_done"
+                                android:visibility="@{crushScanDone? View.VISIBLE:View.GONE}"
+                                app:tint="#64C879" />
+
+                            <View
+                                android:id="@+id/crushBorderView"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@{(!crushScanDone &amp;&amp; error)? @drawable/bg_fingerprint_error : @drawable/bg_fingerprint_normal}" />
+
+                        </FrameLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/startTest"
+                        style="@style/ProfileUpdateButton"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/love_test_start_test" />
+
+                </LinearLayout>
+
+            </com.hola360.crushlovecalculator.ui.lovetest.CustomScrollView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </FrameLayout>
+
+</layout>

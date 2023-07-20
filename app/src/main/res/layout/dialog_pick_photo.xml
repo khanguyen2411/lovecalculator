@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.hola360.crushlovecalculator.dialog.photopicker.PickPhotoViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:colorBackground"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="?colorPrimary"
+            android:paddingHorizontal="@dimen/dp_8">
+
+            <ImageButton
+                android:id="@+id/myButtonClose"
+                android:layout_width="@dimen/dp_36"
+                android:layout_height="@dimen/dp_36"
+                android:layout_centerVertical="true"
+                android:background="?selectableItemBackground"
+                android:contentDescription="@string/app_name"
+                android:onClick="@{()->viewModel.onClose()}"
+                android:src="@{viewModel.isAlbumModel?@drawable/ic_toolbar_back:@drawable/ic_my_photo_close}"
+                app:tint="@color/md_white_1000" />
+
+            <TextView
+                android:id="@+id/tvAlbumName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="?attr/selectableItemBackground"
+                android:drawableEnd="@{viewModel.isAlbumModel?@drawable/ic_baseline_keyboard_arrow_up_32:@drawable/ic_baseline_keyboard_arrow_down_32}"
+                android:drawablePadding="@dimen/dp_8"
+                android:maxLength="20"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:gravity="center"
+                android:onClick="@{()->viewModel.loadAlbum()}"
+                android:paddingHorizontal="@dimen/dp_8"
+                android:paddingVertical="@dimen/dp_4"
+                android:text="@string/title_photos"
+                android:textAppearance="?textAppearanceHeadline6"
+                android:textColor="@color/md_white_1000"
+                android:visibility="@{viewModel.isLoading()?View.INVISIBLE:View.VISIBLE}"
+                app:drawableTint="@color/md_white_1000"
+                tools:ignore="UseCompatTextViewDrawableXml" />
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="@{viewModel.isEmpty()?View.VISIBLE:View.GONE}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/empty_list"
+                    android:textAppearance="?textAppearanceBody1" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:visibility="@{viewModel.isLoading()?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</layout>

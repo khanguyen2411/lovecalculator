@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="profileModel"
+            type="com.hola360.crushlovecalculator.data.model.ProfileModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_home_top">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imTopFeature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/bg_home_feature_2"
+            android:adjustViewBounds="true"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/imTopFeature"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/bg_home_top"
+            android:adjustViewBounds="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/dp_8"
+            android:paddingTop="@dimen/dp_8"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/profile"
+                setHomeAvatar="@{profileModel.avatarUrl}"
+                android:layout_width="@dimen/dp_42"
+                android:layout_height="@dimen/dp_42"
+                android:layout_margin="@dimen/dp_4"
+                android:layout_weight="0"
+                android:adjustViewBounds="true"
+                android:background="@drawable/bg_circle_button"
+                android:elevation="@dimen/dp_1"
+                android:padding="@dimen/dp_4"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_person"
+                app:shapeAppearanceOverlay="@style/circle"
+                app:strokeColor="?android:colorBackground"
+                app:strokeWidth="@dimen/dp_2" />
+
+            <TextView
+                android:id="@+id/profileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_4"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:fontFamily="@font/quicksand_bold"
+                android:textAppearance="?textAppearanceBody2"
+                android:lines="1"
+                android:text="@{profileModel.name}"
+                android:textColor="@color/md_white_1000" />
+
+            <ImageView
+                android:id="@+id/notification"
+                style="@style/CircleButtonStyle"
+                android:layout_marginHorizontal="@dimen/dp_8"
+                android:layout_weight="0"
+                android:src="@drawable/ic_home_notifi" />
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_home"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            android:paddingBottom="@dimen/dp_16"
+            android:scrollbars="none"
+            android:background="@drawable/bg_home_bottom"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:spanCount="3"
+            tools:itemCount="9"
+            tools:listitem="@layout/item_home_button" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

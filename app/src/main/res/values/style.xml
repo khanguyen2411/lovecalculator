@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="textNormalDialogEvent">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
+<!--        <item name="android:fontFamily">@font/quicksand_medium"</item>-->
+    </style>
+
+    <style name="titleDayDialogEvent">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textAppearance">@style/TextAppearance.MyTheme.Headline8</item>
+        <item name="android:layout_marginBottom">@dimen/dp_5</item>
+    </style>
+
+    <style name="textDay_BottomSheetEvent">
+        <item name="android:textColor">#9F9898</item>
+        <item name="android:textAppearance">@style/TextAppearance.MyTheme.Headline9</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="CircleButtonStyle">
+        <item name="android:layout_width">@dimen/circle_button_height</item>
+        <item name="android:layout_height">@dimen/circle_button_height</item>
+        <item name="android:padding">@dimen/dp_4</item>
+        <item name="android:background">@drawable/bg_circle_button</item>
+        <item name="android:elevation">@dimen/card_elevation</item>
+    </style>
+
+
+    <style name="ProfileLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginTop">@dimen/dp_24</item>
+    </style>
+
+    <style name="ProfileLayout2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ProfileEditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/dp_8</item>
+        <item name="android:layout_marginBottom">@dimen/dp_8</item>
+        <item name="android:paddingStart">@dimen/dp_8</item>
+        <item name="android:paddingEnd">@dimen/dp_8</item>
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+        <item name="android:background">@null</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textColor">#555555</item>
+    </style>
+
+    <style name="ProfileDivineStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">#D2ADE5</item>
+        <item name="android:layout_marginTop">@dimen/dp_8</item>
+    </style>
+
+    <style name="ProfileTextUnitStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+        <item name="android:textSize">@dimen/dp_16</item>
+        <item name="android:textColor">#555555</item>
+        <item name="android:drawableEnd">@drawable/ic_profile_expand_more</item>
+        <item name="android:layout_marginEnd">@dimen/v_margin</item>
+    </style>
+
+    <style name="BottomSheetTopView">
+        <item name="android:layout_width">@dimen/dp_48</item>
+        <item name="android:layout_height">@dimen/dp_8</item>
+        <item name="android:layout_marginTop">@dimen/dp_8</item>
+        <item name="android:background">@drawable/bg_top_view_bottom_sheet</item>
+    </style>
+
+    <style name="BottomSheetTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?actionBarSize</item>
+        <item name="android:textAppearance">?textAppearanceBody1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/bottomSheet</item>
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+    </style>
+
+    <style name="BottomSheetClose">
+        <item name="android:layout_width">@dimen/dp_32</item>
+        <item name="android:layout_height">@dimen/dp_32</item>
+        <!--        <item name="android:tint">?android:textColorPrimary</item>-->
+        <item name="android:src">@drawable/ic_confirm_back</item>
+        <item name="android:layout_marginStart">@dimen/dp_8</item>
+        <item name="android:layout_marginEnd">@dimen/dp_12</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="BottomSheetLayoutItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+    </style>
+
+    <style name="BottomSheetItemText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+        <item name="android:layout_marginStart">20dp</item>
+    </style>
+
+    <style name="ProfileUpdateButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+        <item name="android:minWidth">100dp</item>
+        <item name="android:background">@drawable/bg_profile_update</item>
+        <item name="android:elevation">@dimen/card_elevation</item>
+        <item name="android:paddingStart">@dimen/dp_32</item>
+        <item name="android:paddingEnd">@dimen/dp_32</item>
+        <item name="android:paddingTop">@dimen/dp_8</item>
+        <item name="android:paddingBottom">@dimen/dp_8</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+        <item name="android:textAppearance">?textAppearanceHeadline6</item>
+    </style>
+
+    <style name="TestBirthdayEditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/dp_8</item>
+        <item name="android:paddingEnd">@dimen/dp_8</item>
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+        <item name="android:background">@null</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textColor">#555555</item>
+        <item name="android:inputType">textCapWords</item>
+        <item name="android:layout_marginStart">@dimen/dp_16</item>
+        <item name="android:layout_marginEnd">@dimen/dp_16</item>
+    </style>
+
+    <style name="HeightEditTextStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:maxLength">5</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:layout_marginTop">@dimen/dp_8</item>
+        <item name="android:layout_marginBottom">@dimen/dp_8</item>
+        <item name="android:paddingStart">@dimen/dp_8</item>
+        <item name="android:paddingEnd">@dimen/dp_8</item>
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+        <item name="android:background">@null</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textColor">#555555</item>
+    </style>
+
+    <style name="LoveTestScrollStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">#FFF4F9</item>
+    </style>
+
+    <style name="LoveTestContentLayoutStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_lovetest_menu</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="BirthdayTitleLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginTop">@dimen/dp_24</item>
+        <item name="android:layout_marginStart">@dimen/dp_32</item>
+        <item name="android:layout_marginEnd">@dimen/dp_32</item>
+    </style>
+
+    <style name="BirthdayIconStyle">
+        <item name="android:layout_width">@dimen/dp_24</item>
+        <item name="android:layout_height">@dimen/dp_24</item>
+    </style>
+
+    <style name="BirthdayTitleStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/dp_8</item>
+        <item name="android:fontFamily">@font/quicksand_semibold</item>
+        <item name="android:textAppearance">?textAppearanceBody1</item>
+        <item name="android:textColor">#F35661</item>
+    </style>
+
+    <style name="BirthdayErrorTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">start</item>
+        <item name="android:fontFamily">@font/quicksand_regular</item>
+        <item name="android:textAppearance">?textAppearanceCaption</item>
+        <item name="android:textColor">@color/error_color</item>
+        <item name="android:layout_marginStart">@dimen/dp_36</item>
+    </style>
+
+    <style name="BirthdayContentLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginTop">@dimen/dp_8</item>
+        <item name="android:layout_marginStart">@dimen/dp_16</item>
+        <item name="android:layout_marginEnd">@dimen/dp_16</item>
+        <item name="android:elevation">@dimen/card_elevation</item>
+    </style>
+
+    <style name="NameInputLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/lovetest_edt_height</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginStart">@dimen/dp_16</item>
+        <item name="android:layout_marginEnd">@dimen/dp_16</item>
+        <item name="android:elevation">@dimen/card_elevation</item>
+    </style>
+
+    <style name="TestAgainButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/quicksand_semibold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minWidth">150dp</item>
+        <item name="android:background">@drawable/bg_profile_update</item>
+        <item name="android:elevation">@dimen/card_elevation</item>
+        <item name="android:paddingStart">@dimen/dp_16</item>
+        <item name="android:paddingEnd">@dimen/dp_16</item>
+        <item name="android:paddingTop">@dimen/dp_8</item>
+        <item name="android:paddingBottom">@dimen/dp_8</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+        <item name="android:textAppearance">?textAppearanceHeadline6</item>
+    </style>
+
+    <style name="ResultNumberText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textAppearance">?textAppearanceHeadline2</item>
+    </style>
+
+    <style name="ResultStringText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/quicksand_semibold</item>
+        <item name="android:textColor">#676666</item>
+        <item name="android:textAppearance">?textAppearanceHeadline6</item>
+    </style>
+
+    <style name="ResultNameTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textAppearance">?textAppearanceBody1</item>
+        <item name="android:textColor">#454545</item>
+    </style>
+
+    <style name="ResultHeartStyle">
+        <item name="android:layout_width">@dimen/dp_64</item>
+        <item name="android:layout_height">@dimen/dp_32</item>
+        <item name="android:layout_marginTop">@dimen/dp_8</item>
+        <item name="android:src">@drawable/ic_test_result_heart</item>
+    </style>
+
+    <style name="ResultDialogTitleStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/dp_16</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+        <item name="android:textAppearance">?textAppearanceHeadline6</item>
+    </style>
+
+    <style name="ResultDialogNameTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#464545</item>
+        <item name="android:fontFamily">@font/quicksand_semibold</item>
+        <item name="android:textAppearance">?textAppearanceHeadline6</item>
+    </style>
+
+    <style name="SortItemTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textAppearance">?textAppearanceBody1</item>
+        <item name="android:buttonTint">@color/colorAccent</item>
+    </style>
+
+    <style name="ConfirmButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/quicksand_semibold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:elevation">@dimen/card_elevation</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+        <item name="android:textAppearance">?textAppearanceBody1</item>
+    </style>
+
+    <style name="CustomToolBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?actionBarSize</item>
+        <item name="android:background">?colorPrimary</item>
+    </style>
+
+    <!-- material design theme-->
+    <style name="TextAppearance.MyTheme.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <!--Your custom type style here-->
+        <item name="fontFamily">@font/quicksand_bold</item>
+    </style>
+
+    <style name="TextAppearance.MyTheme.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <!--Your custom type style here-->
+        <item name="fontFamily">@font/quicksand_bold</item>
+    </style>
+
+    <style name="TextAppearance.MyTheme.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <!--Your custom type style here-->
+        <item name="fontFamily">@font/quicksand_bold</item>
+    </style>
+
+    <style name="TextAppearance.MyTheme.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <!--Your custom type style here-->
+        <item name="fontFamily">@font/quicksand_bold</item>
+    </style>
+
+    <style name="TextAppearance.MyTheme.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+        <!--Your custom type style here-->
+        <item name="fontFamily">@font/quicksand_bold</item>
+
+    </style>
+
+    <style name="TextAppearance.MyTheme.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <!--Your custom type style here-->
+        <item name="fontFamily">@font/quicksand_bold</item>
+    </style>
+
+    <style name="TextAppearance.MyTheme.Headline7" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/quicksand_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="TextAppearance.MyTheme.Headline8" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/quicksand_medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="TextAppearance.MyTheme.Headline9" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/quicksand_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">9sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="TextAppearance.MyTheme.Headline10" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">@font/quicksand_medium</item>
+    </style>
+
+    <style name="TextAppearance.MyTheme.CustomBody.Diary" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/quicksand_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="TextAppearance.MyTheme.CustomBody" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">@font/quicksand_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/sp_18</item>
+    </style>
+
+    <style name="TextAppearance.MyTheme.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <!--Your custom type style here-->
+        <item name="fontFamily">@font/quicksand_regular</item>
+
+    </style>
+
+    <style name="TextAppearance.MyTheme.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <!--Your custom type style here-->
+        <item name="fontFamily">@font/quicksand_light</item>
+
+    </style>
+
+    <style name="TextAppearance.MyTheme.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/quicksand_regular</item>
+
+    </style>
+
+    <style name="TextAppearance.MyTheme.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <!--Your custom type style here-->
+        <item name="fontFamily">@font/quicksand_light</item>
+
+    </style>
+
+    <style name="TextAppearance.MyTheme.Button" parent="TextAppearance.MaterialComponents.Button">
+        <!--Your custom type style here-->
+
+    </style>
+
+    <style name="TextAppearance.MyTheme.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <!--Your custom type style here-->
+
+    </style>
+
+    <style name="TextAppearance.MyTheme.Overline" parent="TextAppearance.MaterialComponents.Overline">
+        <!--Your custom type style here-->
+
+    </style>
+
+    <style name="Theme.App.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorControlNormal">@color/md_white_1000</item>
+        <item name="android:textColorSecondary">@color/md_white_1000</item>
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+    </style>
+
+    <style name="Theme.App.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="TextAppearance.MyTheme.WeekdayTheme" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/quicksand_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">#594545</item>
+    </style>
+
+    <style name="LoveTimeName">
+        <item name="android:textAppearance">?textAppearanceBody1</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+        <item name="android:shadowColor">@color/md_grey_500</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:lines">1</item>
+        <item name="android:paddingTop">@dimen/dp_6</item>
+        <item name="android:paddingBottom">@dimen/dp_6</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/dp_8</item>
+    </style>
+
+    <style name="DetailImageActionButton">
+        <item name="android:layout_width">@dimen/action_detail_button</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawablePadding">@dimen/dp_2</item>
+        <item name="android:gravity">center</item>
+        <item name="android:lines">1</item>
+        <item name="android:paddingTop">@dimen/dp_8</item>
+        <item name="android:paddingBottom">@dimen/dp_8</item>
+        <item name="android:textAppearance">?textAppearanceBody1</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+        <item name="android:background">?selectableItemBackground</item>
+    </style>
+
+    <style name="TextCountAction">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textAppearance">?textAppearanceBody2</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+        <item name="android:drawablePadding">@dimen/dp_4</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:drawableTint">@color/md_white_1000</item>
+    </style>
+
+    <!--Shape for avatar-->
+    <style name="circle">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="roundedImageStory">
+        <item name="cornerSize">@dimen/dp_2</item>
+    </style>
+
+    <style name="roundedPickImageStory">
+        <item name="cornerSize">@dimen/dp_5</item>
+    </style>
+
+    <style name="roundedImage">
+        <item name="cornerSize">@dimen/dp_4</item>
+    </style>
+
+    <style name="roundedImageDowload">
+        <item name="cornerSize">@dimen/dp_10</item>
+    </style>
+
+    <style name="roundedEventImage">
+        <item name="cornerSize">@dimen/dp_3</item>
+    </style>
+
+    <style name="roundedDialog">
+        <item name="cornerSize">@dimen/dp_16</item>
+    </style>
+
+    <style name="roundedCircle">
+        <item name="cornerSize">@dimen/dp_20</item>
+    </style>
+
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">@dimen/dp_16</item>
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+        <item name="android:textColor">?colorAccent</item>
+    </style>
+
+    <style name="Theme.App.Dialog.FullScreen" parent="Base.Theme.MyApp">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">?android:colorBackground</item>
+    </style>
+
+    <style name="MaterialAlertDialog.Rounded" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="shapeAppearanceOverlay">@style/roundedDialog</item>
+    </style>
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="autoCompleteTextViewStyle">@style/cursorColor</item>
+    </style>
+
+    <style name="cursorColor" parent="Widget.AppCompat.AutoCompleteTextView">
+        <item name="android:textCursorDrawable">@drawable/search_view_cursor</item>
+    </style>
+
+    <dimen name="sp_16">16sp</dimen>
+</resources>

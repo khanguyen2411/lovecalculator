@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_sheet"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/BottomSheetTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center" />
+
+            <ImageButton
+                android:id="@+id/btClose"
+                style="@style/BottomSheetClose"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackground"
+                app:tint="?android:textColorPrimary" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/pickLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <NumberPicker
+                android:id="@+id/monthPicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:descendantFocusability="blocksDescendants"
+                android:switchTextAppearance="?textAppearanceBody1"
+                android:theme="@style/CustomNumberPicker" />
+
+            <NumberPicker
+                android:id="@+id/dayPicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:descendantFocusability="blocksDescendants"
+                android:switchTextAppearance="?textAppearanceBody1"
+                android:theme="@style/CustomNumberPicker" />
+
+            <NumberPicker
+                android:id="@+id/yearPicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants"
+                android:switchTextAppearance="?textAppearanceBody1"
+                android:theme="@style/CustomNumberPicker" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_16"
+            android:background="@drawable/bg_profile_update"
+            android:elevation="@dimen/card_elevation"
+            android:paddingHorizontal="@dimen/dp_32"
+            android:paddingVertical="@dimen/dp_8"
+            android:text="@string/profile_set_birthday"
+            android:fontFamily="@font/quicksand_medium"
+            android:textAppearance="?textAppearanceBody1"
+            android:textColor="@color/md_white_1000" />
+
+    </LinearLayout>
+</layout>

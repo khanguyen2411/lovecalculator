@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/resultNumber"
+            style="@style/ResultNumberText"/>
+
+        <TextView
+            android:id="@+id/stringResult"
+            android:layout_marginTop="20dp"
+            style="@style/ResultStringText"/>
+
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/testAgain"
+                android:text="@string/love_test_result_test_again"
+                android:layout_marginVertical="5dp"
+                style="@style/TestAgainButton"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                android:id="@+id/share"
+                android:text="@string/love_test_result_share"
+                android:background="@drawable/bg_profile_update_left"
+                style="@style/TestAgainButton" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</layout>

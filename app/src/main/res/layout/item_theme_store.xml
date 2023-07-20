@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="imageStore"
+            type="com.hola360.crushlovecalculator.data.model.theme.ThemeModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/myLayoutRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/dp_4"
+        android:paddingVertical="@dimen/dp_4">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/myImageViewIcon"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:bindImageStore="@{imageStore.thumb}"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="1:1.5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundedImage"
+            app:strokeColor="@color/md_grey_500_25"
+            app:strokeWidth="@dimen/dp_1" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_gradient_bottom_dark"
+            app:layout_constraintBottom_toBottomOf="@+id/myImageViewIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvThemeName"
+            style="@style/TextCountAction"
+            android:layout_margin="@dimen/dp_4"
+            android:text="@{imageStore.name}"
+            app:layout_constraintBottom_toBottomOf="@id/myImageViewIcon"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_4"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/myImageViewIcon"
+            app:layout_constraintBottom_toTopOf="@id/tvThemeName"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                style="@style/TextCountAction"
+                android:layout_marginEnd="@dimen/dp_4"
+                android:countAction="@{imageStore.download}"
+                app:drawableStartCompat="@drawable/ic_baseline_download_18" />
+
+            <TextView
+                style="@style/TextCountAction"
+                android:countAction="@{imageStore.like}"
+                app:drawableStartCompat="@drawable/ic_detail_favorite_selected" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

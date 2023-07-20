@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/one"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.15"
+            app:layout_constraintDimensionRatio="1:1"
+            android:layout_marginEnd="@dimen/result_dialog_heart_margin"
+            app:layout_constraintEnd_toStartOf="@+id/two"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_test_result_dialog_heart_bg" />
+
+            <ImageView
+                android:id="@+id/heartOne"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/two"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.15"
+            app:layout_constraintDimensionRatio="1:1"
+            android:layout_marginEnd="@dimen/result_dialog_heart_margin"
+            app:layout_constraintEnd_toStartOf="@+id/three"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/one"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_test_result_dialog_heart_bg" />
+
+            <ImageView
+                android:id="@+id/heartTwo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/three"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.15"
+            app:layout_constraintDimensionRatio="1:1"
+            android:layout_marginEnd="@dimen/result_dialog_heart_margin"
+            app:layout_constraintEnd_toStartOf="@+id/four"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/two"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_test_result_dialog_heart_bg" />
+
+            <ImageView
+                android:id="@+id/heartThree"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/four"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.15"
+            app:layout_constraintDimensionRatio="1:1"
+            android:layout_marginEnd="@dimen/result_dialog_heart_margin"
+            app:layout_constraintEnd_toStartOf="@+id/five"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/three"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_test_result_dialog_heart_bg" />
+
+            <ImageView
+                android:id="@+id/heartFour"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/five"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.15"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/four"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_test_result_dialog_heart_bg" />
+
+            <ImageView
+                android:id="@+id/heartFive"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorAccent"
+            android:theme="@style/Theme.App.AppBarOverlay"
+            app:contentInsetStartWithNavigation="@dimen/dp_4"
+            app:navigationIcon="@drawable/ic_toolbar_back"
+            app:popupTheme="@style/Theme.App.PopupOverlay"
+            app:title="see all"
+            app:titleTextAppearance="?textAppearanceHeadline6"
+            app:titleTextColor="@color/md_white_1000" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/md_white_1000">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleview"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:paddingHorizontal="@dimen/dp_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</layout>

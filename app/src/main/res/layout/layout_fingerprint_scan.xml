@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/layout_fingerprint_scan_xml_constraintlayout_scene">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="@drawable/bg_scan_line_top"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="@drawable/bg_scan_line_bot"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>

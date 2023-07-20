@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple android:color="?android:attr/colorControlHighlight"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/md_white_1000"/>
+        </shape>
+    </item>
+    <item android:top="2dp"
+        android:bottom="2dp"
+        android:start="2dp"
+        android:end="2dp">
+        <shape android:shape="oval">
+            <solid android:color="#F2EFFB"/>
+        </shape>
+    </item>
+</ripple>

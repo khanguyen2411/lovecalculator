@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.hola360.crushlovecalculator.ui.lovediary.calendar.CalendarViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/CustomToolBar"
+            android:theme="@style/Theme.App.AppBarOverlay"
+            app:contentInsetStartWithNavigation="@dimen/dp_4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_toolbar_back"
+            app:popupTheme="@style/Theme.App.PopupOverlay"
+            app:title="@string/string_calendar"
+            app:titleTextAppearance="?textAppearanceHeadline6"
+            app:titleTextColor="@color/md_white_1000" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVer1"
+            android:layout_width="@dimen/dp_1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.03" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVer2"
+            android:layout_width="@dimen/dp_1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.97" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glHor1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6" />
+
+        <ImageView
+            android:id="@+id/ivPrevious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:rotation="180"
+            android:src="@drawable/ic_rounded_arrow"
+            app:layout_constraintBottom_toBottomOf="@id/tvDate"
+            app:layout_constraintStart_toStartOf="@id/glVer1"
+            app:layout_constraintTop_toTopOf="@id/tvDate" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="@dimen/dp_180"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:fontFamily="@font/quicksand_semibold"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="#8295DB"
+            app:layout_constraintStart_toEndOf="@id/ivPrevious"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <TextView
+            android:id="@+id/tvToday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_30"
+            android:background="@drawable/bg_today_text"
+            android:fontFamily="@font/quicksand_semibold"
+            android:paddingHorizontal="@dimen/dp_8"
+            android:paddingVertical="@dimen/dp_5"
+            android:text="@string/today_last_modified"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="#303030"
+            app:layout_constraintBottom_toBottomOf="@id/tvDate"
+            app:layout_constraintStart_toEndOf="@id/ivNext"
+            app:layout_constraintTop_toTopOf="@id/tvDate" />
+
+        <ImageView
+            android:id="@+id/ivNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_rounded_arrow"
+            app:layout_constraintBottom_toBottomOf="@id/tvDate"
+            app:layout_constraintStart_toEndOf="@id/tvDate"
+            app:layout_constraintTop_toTopOf="@id/tvDate" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llWeekday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/glVer2"
+            app:layout_constraintStart_toStartOf="@id/glVer1"
+            app:layout_constraintTop_toBottomOf="@id/tvDate">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/string_sunday"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.MyTheme.WeekdayTheme" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/string_monday"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.MyTheme.WeekdayTheme" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/string_tuesday"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.MyTheme.WeekdayTheme" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/string_wednesday"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.MyTheme.WeekdayTheme" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/string_thursday"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.MyTheme.WeekdayTheme" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/string_friday"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.MyTheme.WeekdayTheme" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/string_saturday"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.MyTheme.WeekdayTheme" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vpCalendar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_5"
+            app:layout_constraintBottom_toBottomOf="@id/glHor1"
+            app:layout_constraintEnd_toEndOf="@id/glVer2"
+            app:layout_constraintStart_toStartOf="@id/glVer1"
+            app:layout_constraintTop_toBottomOf="@id/llWeekday" />
+
+        <View
+            android:id="@+id/vBg"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/bg_story_detail_date"
+            app:layout_constraintStart_toStartOf="@id/glVer1"
+            app:layout_constraintTop_toBottomOf="@id/glHor1" />
+
+        <TextView
+            android:id="@+id/tvPickDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_2"
+            android:elevation="@dimen/dp_1"
+            android:fontFamily="@font/quicksand_semibold"
+            android:text="@string/app_name"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textColor="#E0294C"
+            app:layout_constraintBottom_toTopOf="@id/vBg"
+            app:layout_constraintStart_toStartOf="@id/vBg"
+            app:layout_constraintTop_toTopOf="@id/vBg" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDiary"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:visibility="@{viewModel.isLoading() ? View.INVISIBLE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/glVer2"
+            app:layout_constraintStart_toStartOf="@id/glVer1"
+            app:layout_constraintTop_toBottomOf="@id/vBg" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_70"
+            android:visibility="@{viewModel.isLoading() ? View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="@id/glVer2"
+            app:layout_constraintStart_toStartOf="@id/glVer1"
+            app:layout_constraintTop_toTopOf="@id/vBg" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/quicksand_semibold"
+            android:text="@string/string_no_diary_on_day"
+            android:textAppearance="@style/TextAppearance.MyTheme.CustomBody"
+            android:visibility="@{viewModel.isEmpty() ? View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="@id/glVer2"
+            app:layout_constraintStart_toStartOf="@id/glVer1"
+            app:layout_constraintTop_toBottomOf="@id/vBg" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/myLayoutRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_4"
+        android:layout_marginVertical="@dimen/dp_5"
+        android:background="?selectableItemBackground">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_cover_store"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="2:1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundedImage"
+            app:strokeColor="@color/md_grey_500_25"
+            app:strokeWidth="@dimen/dp_1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

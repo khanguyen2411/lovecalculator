@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mViewModel"
+            type="com.hola360.crushlovecalculator.ui.event.base.BaseEventViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="@dimen/dp_10"
+            android:id="@+id/rvEvent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:splitMotionEvents="false" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/progressbar"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="@{mViewModel.isLoading()?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="@{mViewModel.isEmpty()?View.VISIBLE:View.GONE}"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:noResultSrc="@{mViewModel.isCommonEvent()}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_32"
+                android:layout_marginVertical="@dimen/dp_8"
+                android:text="@{mViewModel.emptyTitle()}"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="?textAppearanceBody1"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="@dimen/dp_8"
+                android:text="@{mViewModel.emptyMessage()}"
+                android:textAlignment="center"
+                android:textAppearance="?textAppearanceBody1"
+                android:textColor="@color/textNoInternet" />
+
+            <TextView
+                android:id="@+id/tvRetryOrAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_8"
+                android:background="@drawable/bg_profile_update"
+                android:elevation="@dimen/card_elevation"
+                android:fontFamily="@font/quicksand_medium"
+                android:paddingHorizontal="@dimen/dp_32"
+                android:paddingVertical="@dimen/dp_8"
+                android:text="@{mViewModel.buttonText()}"
+                android:textAppearance="?textAppearanceBody1"
+                android:textColor="@color/md_white_1000" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

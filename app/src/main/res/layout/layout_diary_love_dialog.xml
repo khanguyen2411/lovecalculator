@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/CustomToolBar"
+            android:theme="@style/Theme.App.AppBarOverlay"
+            app:contentInsetStartWithNavigation="@dimen/dp_4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/menu_story_disable"
+            app:navigationIcon="@drawable/ic_close_dialog"
+            app:popupTheme="@style/Theme.App.PopupOverlay"
+            app:titleTextAppearance="?textAppearanceHeadline6"
+            app:titleTextColor="@color/md_white_1000" />
+
+        <ImageView
+            android:id="@+id/imgWeather"
+            android:layout_width="@dimen/dp_42"
+            android:layout_height="@dimen/dp_42"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_15"
+            android:src="@drawable/ic_weather"
+            android:background="@drawable/bg_icon_weather"
+            android:padding="@dimen/dp_10"/>
+
+        <ImageView
+            android:id="@+id/imgFeeling"
+            android:layout_width="@dimen/dp_42"
+            android:layout_height="@dimen/dp_42"
+            android:layout_below="@id/toolbar"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_15"
+            android:src="@drawable/ic_feeling"
+            android:background="@drawable/bg_icon_weather"
+            android:padding="@dimen/dp_10"/>
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgWeather"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:fontFamily="@font/quicksand_bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/colorAccent" />
+
+
+        <EditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDate"
+            android:layout_marginHorizontal="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/bg_title_add_diary_love"
+            android:fontFamily="@font/quicksand_bold"
+            android:hint="@string/string_diary_title"
+            android:paddingVertical="@dimen/dp_5"
+            android:paddingLeft="@dimen/dp_10"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#263238"
+            android:textColorHint="#C086DF" />
+
+        <EditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etTitle"
+            android:layout_marginHorizontal="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/bg_body_add_diary_love"
+            android:fontFamily="@font/quicksand_bold"
+            android:hint="@string/string_diary_write_more_here"
+            android:paddingVertical="@dimen/dp_10"
+            android:paddingLeft="@dimen/dp_10"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColorHint="#C086DF" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPickPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etDescription"
+            android:layout_marginHorizontal="@dimen/dp_15"
+            android:background="@drawable/bg_image_add_diary_love" />
+
+    </RelativeLayout>
+
+</layout>

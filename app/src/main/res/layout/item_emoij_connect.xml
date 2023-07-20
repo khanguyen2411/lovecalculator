@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="emojiConnect"
+            type="com.hola360.crushlovecalculator.data.model.EmoijConnect" />
+
+        <import type="android.view.View" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_8"
+        app:cardBackgroundColor="@color/md_grey_50"
+        app:cardCornerRadius="@dimen/dp_8"
+        app:cardElevation="@dimen/card_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/myLayoutRoot"
+            android:background="?selectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imEmoji"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintDimensionRatio="1:1"
+                android:padding="@dimen/dp_8"
+                app:layout_constraintTop_toTopOf="parent"
+                android:bindImageStore="@{emojiConnect.png}"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

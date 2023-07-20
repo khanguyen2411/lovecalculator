@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:paddingHorizontal="15dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/download"
+            android:src="@drawable/ic_dialog_result_download"
+            android:layout_width="@dimen/result_dialog_icon_height"
+            android:layout_height="@dimen/result_dialog_icon_height"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="1dp"/>
+
+        <ImageView
+            android:id="@+id/share"
+            android:src="@drawable/ic_dialog_result_share"
+            android:layout_width="@dimen/result_dialog_icon_height"
+            android:layout_height="@dimen/result_dialog_icon_height"/>
+
+    </LinearLayout>
+</layout>

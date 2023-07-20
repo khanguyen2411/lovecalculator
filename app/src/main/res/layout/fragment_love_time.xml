@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.hola360.crushlovecalculator.ui.lovetime.base.BaseLoveTimeViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:contentDescription="@string/app_name"
+            android:id="@+id/imBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:scaleType="fitXY"
+            android:setLovingTimeBg="@{viewModel.mLoveTimeModel}"/>
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/CustomToolBar"
+            android:theme="@style/Theme.App.AppBarOverlay"
+            app:contentInsetStartWithNavigation="@dimen/dp_4"
+            app:popupTheme="@style/Theme.App.PopupOverlay"
+            app:title="@string/home_love_time"
+            app:titleTextAppearance="?textAppearanceHeadline6"
+            app:titleTextColor="@color/md_white_1000" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="@{viewModel.isLoading?View.GONE:View.VISIBLE}">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideLineDivide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.55" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:topHeartLayout="@{viewModel.mLoveTimeModel}"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintWidth_percent="0.75"
+                    tools:ignore="MissingConstraints">
+
+                    <com.caverock.androidsvg.SVGImageView
+                        android:id="@+id/bigHeart"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:background="@null"
+                        android:scaleType="fitCenter"
+                        android:svgResource="@{viewModel.mLoveTimeModel.bigHeartSvg}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/myLayoutPickDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:paddingBottom="@dimen/dp_8">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:applyLoveTheme="@{viewModel.mLoveTimeModel}"
+                            android:fontFamily="@font/quicksand_medium"
+                            android:includeFontPadding="false"
+                            android:lineSpacingExtra="0dp"
+                            android:paddingVertical="0dp"
+                            android:text="@string/been_together"
+                            android:textAppearance="?textAppearanceBody1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:applyLoveTheme="@{viewModel.mLoveTimeModel}"
+                            android:countLovingTime="@{viewModel.mLoveTimeModel}"
+                            android:fontFamily="@font/quicksand_regular"
+                            android:includeFontPadding="false"
+                            android:lineSpacingExtra="0dp"
+                            android:lines="1"
+                            android:paddingVertical="0dp"
+                            android:textAppearance="?textAppearanceHeadline2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:applyLoveTheme="@{viewModel.mLoveTimeModel}"
+                            android:fontFamily="@font/roboto_regular"
+                            android:includeFontPadding="false"
+                            android:lineSpacingExtra="0dp"
+                            android:paddingVertical="0dp"
+                            android:startLoveTime="@{viewModel.mLoveTimeModel}"
+                            android:textAppearance="?textAppearanceHeadline6" />
+
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:arrangeLayout="@{viewModel.mLoveTimeModel}"
+                    android:paddingTop="@dimen/dp_8"
+                    android:paddingBottom="@dimen/dp_32"
+                    tools:ignore="MissingConstraints">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideLineMiddleVertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideLineMiddleVerticalLeft"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.40" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideLineMiddleVerticalRight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.60" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imOwnerAvatar"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:setOwnerLoveTimeAvatar="@{viewModel.mLoveTimeModel}"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/guideLineMiddleVerticalLeft"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent="0.25"
+                        app:shapeAppearanceOverlay="@style/circle"
+                        app:strokeColor="@color/md_grey_500_25"
+                        app:strokeWidth="@dimen/dp_1" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imCrushAvatar"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:setCrushLoveTimeAvatar="@{viewModel.mLoveTimeModel}"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/guideLineMiddleVerticalRight"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent="0.25"
+                        app:shapeAppearanceOverlay="@style/circle"
+                        app:strokeColor="@color/md_grey_500_25"
+                        app:strokeWidth="@dimen/dp_1" />
+
+                    <com.caverock.androidsvg.SVGImageView
+                        android:id="@+id/imEmojiConnection"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_connect_emoji"
+                        android:svgResource="@{viewModel.mLoveTimeModel.emojiSvg}"
+                        app:layout_constraintBottom_toBottomOf="@+id/imOwnerAvatar"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/imCrushAvatar"
+                        app:layout_constraintStart_toEndOf="@+id/imOwnerAvatar"
+                        app:layout_constraintTop_toTopOf="@+id/imOwnerAvatar"
+                        app:layout_constraintWidth_percent="0.18" />
+
+                    <TextView
+                        android:id="@+id/myTextViewName"
+                        style="@style/LoveTimeName"
+                        android:background="@drawable/bg_love_time_your_name"
+                        android:setLoveTimeOwnerName="@{viewModel.mLoveTimeModel}"
+                        app:layout_constraintEnd_toStartOf="@+id/guideLineMiddleVerticalLeft"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imOwnerAvatar"
+                        app:layout_constraintWidth_percent="0.35" />
+
+                    <TextView
+                        android:id="@+id/myTextViewCrushName"
+                        style="@style/LoveTimeName"
+                        android:background="@drawable/bg_love_time_crush_name"
+                        android:setLoveTimeCrushName="@{viewModel.mLoveTimeModel}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/guideLineMiddleVerticalRight"
+                        app:layout_constraintTop_toBottomOf="@+id/imCrushAvatar"
+                        app:layout_constraintWidth_percent="0.35" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:colorBackground"
+                android:gravity="center"
+                android:visibility="@{viewModel.isLoading?View.VISIBLE:View.GONE}">
+
+                <ProgressBar
+                    style="@style/Widget.AppCompat.ProgressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </RelativeLayout>
+</layout>

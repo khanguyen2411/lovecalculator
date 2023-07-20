@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_add_event"
+        android:icon="@drawable/ic_love_time_event"
+        android:title="@string/add_event"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_share"
+        android:icon="@drawable/ic_my_photo_share"
+        android:title="@string/share_friends"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_change_background"
+        android:title="@string/change_background" />
+    <item
+        android:id="@+id/action_change_theme"
+        android:title="@string/change_theme" />
+    <item
+        android:id="@+id/action_change_emoji"
+        android:title="@string/change_emoji_connection" />
+</menu>

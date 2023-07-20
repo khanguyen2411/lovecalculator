@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <Space
+            android:id="@+id/spaceTopConner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_48"
+            app:layout_constraintBottom_toTopOf="@+id/guideLine" />
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_lovetest_banner"
+            app:layout_constraintBottom_toTopOf="@+id/guideLine"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/transparent"
+            android:elevation="0dp"
+            android:paddingStart="@dimen/dp_6"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/chevron_left_circle_36"
+            app:title="@null"
+            tools:ignore="RtlSymmetry" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_lovetest_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/spaceTopConner" />
+
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:gravity="center"
+            android:text="@string/love_test_title"
+            android:textAppearance="?textAppearanceHeadline6"
+            android:textColor="?colorAccent"
+            app:layout_constraintTop_toTopOf="@id/spaceTopConner" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/loveTestRv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            android:paddingTop="@dimen/dp_8"
+            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            app:spanCount="3"
+            tools:itemCount="7"
+            tools:listitem="@layout/item_lovetest" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
